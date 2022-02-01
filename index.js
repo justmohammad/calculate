@@ -10,7 +10,7 @@ const updateScreen = (newNumber) => {
 
 const number = (number) => {
   if (x) {
-    x = x*10 + number
+    x = `${x}${number}`
   } else {
     x = number
   }
@@ -26,22 +26,42 @@ const oprator = (opratorCase) => {
 
   switch (opratorCase) {
     case 'sum':
-      if (typeof(x) === "number") {
-        x = `${x}+`
-      } else {
-        xnew = x.slice(0,x.length-1)
-        x = `${xnew}`
-      }
+            if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
+                x = `${x}+`
+            } else {
+                xnew = x.slice(0,x.length-1)
+                x = `${xnew}`
+            }
           break;
     case 'minus':
-      x = `${x}-`
+        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
+            x = `${x}-`
+        } else {
+            xnew = x.slice(0,x.length-1)
+            x = `${xnew}`
+        }
           break;
     case 'multiple':
-      x = `${x}*`
+        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
+            x = `${x}*`
+        } else {
+            xnew = x.slice(0,x.length-1)
+            x = `${xnew}`
+        }
           break;
     case 'dvide':
-      x = `${x}/`
+        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
+            x = `${x}/`
+        } else {
+            xnew = x.slice(0,x.length-1)
+            x = `${xnew}`
+        }
           break;
   }
   updateScreen(x)
+}
+
+const dotNumber = () => {
+    x = `${x}.`
+    updateScreen(x)
 }
