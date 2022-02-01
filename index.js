@@ -26,7 +26,7 @@ const oprator = (opratorCase) => {
 
   switch (opratorCase) {
     case 'sum':
-      if (typeof(x.slice(-1)) === "number") {
+      if (typeof(x) === "number") {
         x = `${x}+`
       } else {
         xnew = x.slice(0,x.length-1)
