@@ -6,7 +6,6 @@ html,body {
 .calculate {
     background: #1b9e9e;
     width: 350px;
-    height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +23,12 @@ html,body {
 .calculate .content .lcd {
     background: #cdd2d3;
     height: 40px;
-    width: 95%;
+    width: 90%;
+    font-size: 30px;
     margin: 8px;
+    color: darkslategrey;
+    direction: rtl;
+    padding: 0 7px;
 }
 
 .calculate .content .buttons {
@@ -33,7 +36,6 @@ html,body {
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
     margin: 15px 10px;
-    height: 200px;
 }
 
 .calculate .content .buttons .number {
