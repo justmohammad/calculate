@@ -10,7 +10,7 @@ const updateScreen = (newNumber) => {
 
 const number = (number) => {
   if (x) {
-    x = `${x}${number}`
+    x = x*10 + number
   } else {
     x = number
   }
@@ -23,18 +23,25 @@ const clearLcd = () => {
 }
 
 const oprator = (opratorCase) => {
+
   switch (opratorCase) {
     case 'sum':
-      console.log('a')
+      if (typeof(x.slice(-1)) === "number") {
+        x = `${x}+`
+      } else {
+        xnew = x.slice(0,x.length-1)
+        x = `${xnew}`
+      }
           break;
     case 'minus':
-      console.log('b')
+      x = `${x}-`
           break;
     case 'multiple':
-          console.log('c')
+      x = `${x}*`
           break;
     case 'dvide':
-      console.log('c')
+      x = `${x}/`
           break;
   }
+  updateScreen(x)
 }
