@@ -1,6 +1,11 @@
+let opt = null
 let x = 0
+let state = 'number1';
+let y = 0;
+let z
 
 const onload = () => {
+    x = 0;
   updateScreen(x)
 }
 
@@ -9,54 +14,59 @@ const updateScreen = (newNumber) => {
 }
 
 const number = (number) => {
-  if (x) {
-    x = `${x}${number}`
-  } else {
-    x = number
-  }
-  updateScreen(x);
+    if (state === 'number1') {
+        if (x) {
+            x = `${x}${number}`
+        } else {
+            x = number
+        }
+        updateScreen(x);
+    } else if (state === 'number2') {
+        if (y) {
+            y = `${y}${number}`
+        } else {
+            y = number
+        }
+        updateScreen(y);
+    }
 }
 
 const clearLcd = () => {
-  x = 0
+    [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
+        item.classList.remove('active');
+    })
+
+    state = 'number1'
+    x = 0
+    y = 0
   updateScreen(x)
 }
 
 const oprator = (opratorCase) => {
 
+    [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
+        item.classList.remove('active');
+    })
+
+    document.getElementById(`${opratorCase}`).classList.add('active')
+
   switch (opratorCase) {
-    case 'sum':
-            if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
-                x = `${x}+`
-            } else {
-                xnew = x.slice(0,x.length-1)
-                x = `${xnew}`
-            }
+      case 'sum':
+          opt = 'sum'
+          state = 'number2'
           break;
-    case 'minus':
-        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
-            x = `${x}-`
-        } else {
-            xnew = x.slice(0,x.length-1)
-            x = `${xnew}`
-        }
-          break;
-    case 'multiple':
-        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
-            x = `${x}*`
-        } else {
-            xnew = x.slice(0,x.length-1)
-            x = `${xnew}`
-        }
-          break;
+      case 'minus':
+          opt = 'minus'
+        state = 'number2'
+        break;
+      case 'multiple':
+          opt = 'multiple'
+        state = 'number2'
+        break;
     case 'dvide':
-        if (!x.length || x.slice(-1) !== '+' || x.slice(-1) !== '-' || x.slice(-1) !== '*' || x.slice(-1) !== '/') {
-            x = `${x}/`
-        } else {
-            xnew = x.slice(0,x.length-1)
-            x = `${xnew}`
-        }
-          break;
+        opt = 'dvide'
+        state = 'number2'
+        break;
   }
   updateScreen(x)
 }
@@ -64,4 +74,29 @@ const oprator = (opratorCase) => {
 const dotNumber = () => {
     x = `${x}.`
     updateScreen(x)
+}
+
+const eval = () => {
+    [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
+        item.classList.remove('active');
+    })
+
+    switch (opt) {
+        case 'sum':
+            z = Number(x) + Number(y)
+            break
+        case 'minus':
+            z = Number(x) - Number(y)
+            break
+        case 'multiple':
+            z = Number(x)*Number(y)
+            break
+        case 'dvide':
+            z = Number(x)/Number(y)
+            break
+    }
+    updateScreen(z)
+    state = 'number1'
+    x = z
+    y = 0
 }

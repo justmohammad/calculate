@@ -43,3 +43,9 @@ html,body {
     width: 75px;
     height: 40px;
 }
+
+
+.active {
+    background: #079b31 !important;
+    box-shadow: none;
+}
