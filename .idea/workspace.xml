@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baa56cab-6da3-4957-be04-72db17c97a0d" name="Changes" comment="New Version Project And Project Ended" />
+    <list default="true" id="baa56cab-6da3-4957-be04-72db17c97a0d" name="Changes" comment="New Version Project And Project Ended">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +55,8 @@
       <workItem from="1643705946419" duration="11752000" />
       <workItem from="1643746090815" duration="3174000" />
       <workItem from="1643785539000" duration="17144000" />
-      <workItem from="1643821440775" duration="1255000" />
+      <workItem from="1643821440775" duration="1552000" />
+      <workItem from="1643823041524" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="write base html">
       <created>1643706307816</created>
@@ -127,6 +130,28 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="4565f76e-4040-4f61-9073-736da18b5c16">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="test" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -135,7 +160,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="newBranch" />
+                        <option value="test" />
                       </list>
                     </value>
                   </entry>
@@ -149,6 +174,11 @@
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="4565f76e-4040-4f61-9073-736da18b5c16" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
