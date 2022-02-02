@@ -1,12 +1,13 @@
-let opt = null
-let x = 0
+let opt,x,y,z
 let state = 'number1';
-let y = 0;
-let z
+
+class Screen {
+
+}
 
 const onload = () => {
     x = 0;
-  updateScreen(x)
+    updateScreen(x)
 }
 
 const updateScreen = (newNumber) => {
@@ -31,11 +32,14 @@ const number = (number) => {
     }
 }
 
-const clearLcd = () => {
+const removeActive = () => {
     [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
         item.classList.remove('active');
     })
+}
 
+const clearLcd = () => {
+    removeActive()
     state = 'number1'
     x = 0
     y = 0
@@ -44,42 +48,27 @@ const clearLcd = () => {
 
 const oprator = (opratorCase) => {
 
-    [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
-        item.classList.remove('active');
-    })
+    removeActive()
 
     document.getElementById(`${opratorCase}`).classList.add('active')
 
-  switch (opratorCase) {
-      case 'sum':
-          opt = 'sum'
-          state = 'number2'
-          break;
-      case 'minus':
-          opt = 'minus'
-        state = 'number2'
-        break;
-      case 'multiple':
-          opt = 'multiple'
-        state = 'number2'
-        break;
-    case 'dvide':
-        opt = 'dvide'
-        state = 'number2'
-        break;
-  }
+    opt = opratorCase
+    state = 'number2'
   updateScreen(x)
 }
 
 const dotNumber = () => {
-    x = `${x}.`
-    updateScreen(x)
+    if (state === 'number1') {
+        x = `${x}.`
+        updateScreen(x);
+    } else if (state === 'number2') {
+        y = `${y}.`
+        updateScreen(y);
+    }
 }
 
 const eval = () => {
-    [].forEach.call(document.querySelectorAll('.oprator'), (item) => {
-        item.classList.remove('active');
-    })
+    removeActive()
 
     switch (opt) {
         case 'sum':
