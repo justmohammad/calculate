@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfe9fb9-f20b-4208-82a0-2b70b8fc6eef" name="Changes" comment="New Version Project And Project Ended" />
+    <list default="true" id="5bfe9fb9-f20b-4208-82a0-2b70b8fc6eef" name="Changes" comment="end" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643803605720</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="end">
+      <created>1643826321833</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643826321833</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +197,7 @@
     <MESSAGE value="complete project" />
     <MESSAGE value="new version project" />
     <MESSAGE value="New Version Project And Project Ended" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Version Project And Project Ended" />
+    <MESSAGE value="end" />
+    <option name="LAST_COMMIT_MESSAGE" value="end" />
   </component>
 </project>
