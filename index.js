@@ -1,10 +1,6 @@
 let opt,x,y,z
 let state = 'number1';
 
-class Screen {
-
-}
-
 const onload = () => {
     x = 0;
     updateScreen(x)
